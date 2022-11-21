@@ -1,5 +1,6 @@
 package com.regex.test;
 
+import com.regex.assignments.InvalidUserDetailsException;
 import com.regex.assignments.RegExMain;
 import org.junit.Assert;
 import org.junit.Before;
@@ -34,8 +35,8 @@ public class ParametricClass {
     }
 
     @Test
-    public void validateSampleEmailTest() {
-        Assert.assertTrue(obj.validateEmail(email));
+    public void validateSampleEmailTest() throws InvalidUserDetailsException {
+        Assert.assertEquals(true,obj.validateEmail(email));
     }
 
 }
