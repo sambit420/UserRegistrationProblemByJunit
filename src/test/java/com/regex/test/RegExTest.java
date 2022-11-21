@@ -1,4 +1,5 @@
 package com.regex.test;
+
 import com.regex.assignments.RegExMain;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -21,63 +22,63 @@ public class RegExTest {
     @Test
     public void validateFirstNameTest() {
         System.out.println("Valid first name of user");
-        String firstName = "Sambit";
+        String firstName = "Soumya";
         Assert.assertTrue(obj.validateName(firstName));
     }
 
     @Test
     public void validateFirstNameLowerCaseShouldFail() {
         System.out.println("Invalid first name of user which contains only lowercase");
-        String firstName = "sambit";
+        String firstName = "soumya";
         Assert.assertFalse(obj.validateName(firstName));
     }
 
     @Test
     public void validateFirstNameLessThanThreeShouldFail() {
         System.out.println("Invalid first name of user which having only three characters");
-        String firstName = "Sam";
+        String firstName = "Sou";
         Assert.assertFalse(obj.validateName(firstName));
     }
 
     @Test
     public void validateLastNameTest() {
         System.out.println("Valid last name of user");
-        String lastName = "Kumar";
+        String lastName = "Ranjan";
         Assert.assertTrue(obj.validateName(lastName));
     }
 
     @Test
     public void validateLastNameLowerCaseShouldFail() {
         System.out.println("Invalid last name of user which contains only lowercase");
-        String lastName = "kumar";
+        String lastName = "ranjan";
         Assert.assertFalse(obj.validateName(lastName));
     }
 
     @Test
     public void validateLastNameLessThanThreeShouldFail() {
         System.out.println("Invalid last name of user which having only three characters");
-        String lastName = "Kum";
+        String lastName = "Ran";
         Assert.assertFalse(obj.validateName(lastName));
     }
 
     @Test
     public void validateEmailTest() {
         System.out.println("Valid email id of user");
-        String emailId = "sambit@gmail.com";
+        String emailId = "soumyars675@gmail.com";
         Assert.assertTrue(obj.validateEmail(emailId));
     }
 
     @Test
     public void validateEmailWithoutDomainShouldFail() {
         System.out.println("Invalid email id of user without domain");
-        String emailId = "sambit675";
+        String emailId = "soumyars675";
         Assert.assertFalse(obj.validateEmail(emailId));
     }
 
     @Test
     public void validateEmailWithStartingFirstLetterCapitalShouldFail() {
         System.out.println("Invalid email id of user having starting letter is capital");
-        String emailId = "Sambit123@gmail.com";
+        String emailId = "Soumyars675@gmail.com";
         Assert.assertFalse(obj.validateEmail(emailId));
     }
 
@@ -112,42 +113,42 @@ public class RegExTest {
     @Test
     public void validatePasswordTest() {
         System.out.println("Valid password of user");
-        String password = "Sambit@123";
+        String password = "Soumya@123";
         Assert.assertTrue(obj.validatePassword(password));
     }
 
     @Test
     public void validatePasswordLimitLowerThanEightCharactersShouldFail() {
         System.out.println("Invalid password of user which contains minimum 8 characters");
-        String password = "Sambit@";
+        String password = "Soumya@";
         Assert.assertFalse(obj.validatePassword(password));
     }
 
     @Test
     public void validatePasswordTestLimitGreaterThanTwentyCharactersShouldFail() {
         System.out.println("Invalid password of user which contains more than 20 characters");
-        String password = "Sambit@1234567890ghfdc";
+        String password = "Soumya@1234567890ghfdc";
         Assert.assertFalse(obj.validatePassword(password));
     }
 
     @Test
     public void validatePasswordWithoutUpperCaseShouldFail() {
         System.out.println("Invalid password of user which doesn't contains any upper case");
-        String password = "sambit@123";
+        String password = "soumya@123";
         Assert.assertFalse(obj.validatePassword(password));
     }
 
     @Test
     public void validatePasswordWithoutNumericNumberShouldFail() {
         System.out.println("Invalid password of user which doesn't contains any upper case");
-        String password = "Sambitkum@";
+        String password = "Soumyars@";
         Assert.assertFalse(obj.validatePassword(password));
     }
 
     @Test
     public void validatePasswordWithoutSpecialCharacterShouldFail() {
         System.out.println("Invalid password of user which doesn't contains special character");
-        String password = "Sambit123";
+        String password = "Soumya123";
         Assert.assertFalse(obj.validatePassword(password));
     }
 
