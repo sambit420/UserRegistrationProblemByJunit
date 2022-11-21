@@ -31,7 +31,7 @@ public class RegExTest {
     @Test
     public void validateFirstNameLessThanThreeShouldFail() {
         System.out.println("Invalid first name of user which having only three characters");
-        String firstName = "Sam";
+        String firstName = "Sou";
         Assert.assertFalse(obj.validateName(firstName));
     }
 
@@ -59,21 +59,21 @@ public class RegExTest {
     @Test
     public void validateEmailTest() {
         System.out.println("Valid email id of user");
-        String emailId = "sambit2024@gmail.com";
+        String emailId = "soumyars675@gmail.com";
         Assert.assertTrue(obj.validateEmail(emailId));
     }
 
     @Test
     public void validateEmailWithoutDomainShouldFail() {
         System.out.println("Invalid email id of user without domain");
-        String emailId = "sambit420";
+        String emailId = "soumyars675";
         Assert.assertFalse(obj.validateEmail(emailId));
     }
 
     @Test
     public void validateEmailWithStartingFirstLetterCapitalShouldFail() {
         System.out.println("Invalid email id of user having starting letter is capital");
-        String emailId = "Sambit 2024@gmail.com";
+        String emailId = "Soumyars675@gmail.com";
         Assert.assertFalse(obj.validateEmail(emailId));
     }
 
@@ -103,5 +103,47 @@ public class RegExTest {
         System.out.println("Invalid mobile no of user which is more than 10 numbers");
         String phoneNo = "+91 65786418112";
         Assert.assertFalse(obj.validatePhoneNo(phoneNo));
+    }
+
+    @Test
+    public void validatePasswordTest() {
+        System.out.println("Valid password of user");
+        String password = "Soumya@123";
+        Assert.assertTrue(obj.validatePassword(password));
+    }
+
+    @Test
+    public void validatePasswordLimitLowerThanEightCharactersShouldFail() {
+        System.out.println("Invalid password of user which contains minimum 8 characters");
+        String password = "Soumya@";
+        Assert.assertFalse(obj.validatePassword(password));
+    }
+
+    @Test
+    public void validatePasswordTestLimitGreaterThanTwentyCharactersShouldFail() {
+        System.out.println("Invalid password of user which contains more than 20 characters");
+        String password = "Soumya@1234567890ghfdc";
+        Assert.assertFalse(obj.validatePassword(password));
+    }
+
+    @Test
+    public void validatePasswordWithoutUpperCaseShouldFail() {
+        System.out.println("Invalid password of user which doesn't contains any upper case");
+        String password = "soumya@123";
+        Assert.assertFalse(obj.validatePassword(password));
+    }
+
+    @Test
+    public void validatePasswordWithoutNumericNumberShouldFail() {
+        System.out.println("Invalid password of user which doesn't contains any upper case");
+        String password = "Soumyars@";
+        Assert.assertFalse(obj.validatePassword(password));
+    }
+
+    @Test
+    public void validatePasswordWithoutSpecialCharacterShouldFail() {
+        System.out.println("Invalid password of user which doesn't contains special character");
+        String password = "Soumya123";
+        Assert.assertFalse(obj.validatePassword(password));
     }
 }
