@@ -4,6 +4,12 @@ import java.util.regex.Pattern;
 
 public class RegExMain {
 
+    public String firstName = "Sambit";
+    public String lastName = "kumar";
+    public String emailId = "sambit@gmail.com";
+    public String phoneNo = "+91 8908641811";
+    public String password = "Sambit@123";
+
     public boolean validateName(String name) {
         return Pattern.matches("[A-Z][a-z]{3,}",name);
     }
