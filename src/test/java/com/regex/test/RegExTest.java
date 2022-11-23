@@ -169,7 +169,7 @@ public class RegExTest {
         {
             try
             {
-                RegExMain.validateEmail(emailList.get(i));
+                obj.validateEmail(emailList.get(i));
             }
             catch (Exception e)
             {
